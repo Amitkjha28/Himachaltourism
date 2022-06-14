@@ -1,0 +1,35 @@
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 4px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+img{
+  width: 100%;
+ 
+}
+
+
+.dive {
+  border: 30px solid gray;
+  padding: 100px;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: Darkblue;
+}
+
+p {
+  text-indent: 30px;
+  text-align: justify;
+  letter-spacing: 0.8px;
+}
+
+a {
+  text-decoration: none;
+  color: lightblue;
+}
