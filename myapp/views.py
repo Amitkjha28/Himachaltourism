@@ -15,3 +15,9 @@ def my_destination(request):
 def my_district(request,my_id):
     district_data = District.objects.get(id=my_id)
     return  render(request,"district.html",{ 'districtdata' :district_data})
+
+def my_contact(request):
+    return  render(request,"contact.html")
+
+def my_reach(request):
+    return  render(request,"how_to_reach.html")
