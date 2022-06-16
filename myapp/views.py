@@ -11,3 +11,7 @@ def my_index(request):
 def my_destination(request):
     district_data = District.objects.all()
     return  render(request,"Destination.html",{ 'districtdata' :district_data})
+
+def my_district(request):
+    district_data = District.objects.all()
+    return  render(request,"district.html",{ 'districtdata' :district_data})

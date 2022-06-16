@@ -1,0 +1,42 @@
+{% extends 'parent.html' %}
+{% block title %} Himachal Pradesh | Tourism  {% endblock %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css\How to reach.css' %}">
+<link rel="stylesheet" href="{% static 'css\shimla.css' %}">
+
+<img src="{% static 'image/kangra/Screenshot 2022-02-01 111407.jpg' %}" alt="Kangra" width="1349" height="450"><br><br>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Intro')" id="defaultOpen">Intro</button>
+  <button class="tablinks" onclick="openCity(event, 'How To Reach')">How To Reach</button>
+
+  <button class="tablinks" onclick="openCity(event, 'Things To Do')">Things To Do</button>
+</div>
+{% if districtdata %}
+{% for data in districtdata%}
+<div id="Intro" class="tabcontent">
+{{ data.district_info | safe }}
+
+</div>
+<div id="How To Reach" class="tabcontent">
+  <p style="letter-spacing: 1px;">
+
+{{ data.district_reach | safe }}
+
+</div>
+
+<div id="Things To Do" class="tabcontent">
+
+{{ data.district_things | safe }}
+
+
+<script src="{% static 'js\shimla.js' %}">
+</script>
+</div>
+{% endfor %}
+{% else %}
+<br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Detail added yet </h2><br>
+{% endif %}
+
+{% endblock %}
