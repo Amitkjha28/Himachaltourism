@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 # Create your models here.
@@ -7,9 +8,9 @@ from django.db import models
 class District(models.Model):
     district_name = models.CharField(max_length=60)
     district_Image = models.ImageField(upload_to='districtpics')
-    district_info = RichTextField(null=True, blank=True)
-    district_reach = RichTextField(null=True, blank=True)
-    district_things= RichTextField(null=True, blank=True)
+    district_info = RichTextUploadingField(null=True, blank=True)
+    district_reach = RichTextUploadingField(null=True, blank=True)
+    district_things= RichTextUploadingField(null=True, blank=True)
 
     def __str__(self):
         return self.district_name
