@@ -14,27 +14,27 @@
   <button class="tablinks" onclick="openCity(event, 'Things To Do')">Things To Do</button>
 </div>
 {% if districtdata %}
-{% for data in districtdata%}
+
 <div id="Intro" class="tabcontent">
-{{ data.district_info | safe }}
+{{ districtdata.district_info | safe }}
 
 </div>
 <div id="How To Reach" class="tabcontent">
   <p style="letter-spacing: 1px;">
 
-{{ data.district_reach | safe }}
+{{ districtdata.district_reach | safe }}
 
 </div>
 
 <div id="Things To Do" class="tabcontent">
 
-{{ data.district_things | safe }}
+{{ districtdata.district_things | safe }}
 
 
 <script src="{% static 'js\shimla.js' %}">
 </script>
 </div>
-{% endfor %}
+
 {% else %}
 <br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Detail added yet </h2><br>
 {% endif %}

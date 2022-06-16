@@ -20,19 +20,23 @@ tourism and opening up of new sub destinations. To promote tourism in the countr
 <br><br>
 
 </div>
-{% if districtdata %}
-{% for data in districtdata%}
+
 <div class="row">
-  <div class="column">
-    <div class="container">
-        <div class="centered"><a href="{% url 'mydistrict' %}"><p style="color:blue;font-size:200% ;text-align:center;"><b>{{ data.district_name }} </b></p></a></div>
-   <a href="#"><img  src="{{ data.district_Image.url }}"  height=400></a>
-  </div><br><br>
-  </div>
+    {% if districtdata %}
+    {% for data in districtdata %}
+    <div class="column">
+        <div class="container">
+             <img src="{{ data.district_Image.url }}"  alt="Shimla" width="400" height="400">
+            <div class="centered"><a href="{% url 'mydistrict' data.id %}">{{ data.district_name }}</a></div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Destination <br> added yet </h2><br>
+    {% endif %}
 </div>
-{% endfor %}
-{% else %}
-<br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Destination <br> added yet </h2><br>
-{% endif %}
+
+
+
 
 {% endblock %}

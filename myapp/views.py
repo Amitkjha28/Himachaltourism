@@ -12,6 +12,6 @@ def my_destination(request):
     district_data = District.objects.all()
     return  render(request,"Destination.html",{ 'districtdata' :district_data})
 
-def my_district(request):
-    district_data = District.objects.all()
+def my_district(request,my_id):
+    district_data = District.objects.get(id=my_id)
     return  render(request,"district.html",{ 'districtdata' :district_data})
