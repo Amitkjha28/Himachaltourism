@@ -1,5 +1,4 @@
 
-
 {% extends 'parent.html' %}
 {% block title %} Himachal Pradesh | Destination {% endblock %}
 {% load static %}
@@ -19,14 +18,19 @@ tourism and opening up of new sub destinations. To promote tourism in the countr
 <br><br>
 
 </div>
-<div class="row"><br>
+{% if districtdata %}
+{% for data in districtdata%}
+<div class="row">
   <div class="column">
     <div class="container">
-        <div class="centered"><a href="#"><p style="color:blue;font-size:200% ;text-align:center;"><b>Shimla </b></p></a></div>
-   <a href="#"><img  src="{% static 'image/156110839122.jpg' %}"  height=400></a>
+        <div class="centered"><a href="#"><p style="color:blue;font-size:200% ;text-align:center;"><b>{{ data.district_name }} </b></p></a></div>
+   <a href="#"><img  src="{{ data.district_Image.url }}"  height=400></a>
   </div><br><br>
   </div>
 </div>
-
+{% endfor %}
+{% else %}
+<br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Destination <br> added yet </h2><br>
+{% endif %}
 
 {% endblock %}
