@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -6,7 +8,8 @@ from myapp.models import District
 
 
 def my_index(request):
-    return render(request,"tourism.html")
+    current_date = datetime.datetime.now()
+    return render(request,"tourism.html",{ 'current_datetime' :current_date})
 
 def my_destination(request):
     district_data = District.objects.all()
