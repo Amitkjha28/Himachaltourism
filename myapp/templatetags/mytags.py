@@ -6,4 +6,4 @@ register = template.Library()
 
 @register.simple_tag
 def current_date():
-    return datetime.datetime.now()
+    return datetime.datetime.now().replace(microsecond=0)
