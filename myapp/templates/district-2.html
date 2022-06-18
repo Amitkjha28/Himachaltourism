@@ -4,39 +4,154 @@
 {% load static %}
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css\destination.css' %}">
+<html lang="en">
 
-<div class="container">
-<img src="{% static 'image/feature.jpg' %}" width="1349" height="550">
-<div class="bottom-left"><U>Destination in Himachal Pradesh</u></div>
-</div>
-<div class="divi">
-<h2>All Destinations</h2>
-<p style="text-align:center;"> While traditionally Himachal was known as a summer destination, the Dept. of Tourism & Civil Aviation has taken special efforts to break
-the seasonality factor and has developed diversified tourism products to attract tourist in other seasons too.<br><br>
-Now Himachal is known as <q>A Destination for All Seasons and All Reasons.</q><br><br>In fact, the Dept. has laid a special emphasis on the development of activity-based
-tourism and opening up of new sub destinations. To promote tourism in the countryside and to unexplored areas, appropriate infrastructure is being developed within avail resources.
-</p>
-<br><br>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpOceans">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <title>Parador - Hotel Booking HTML5 Template</title>
+<!--    <link href="{% static 'hotel/css/themify-icons.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/font-awesome.min.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'hotel/css/bootstrap.min.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/animate.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/owl.carousel.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/owl.theme.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/slick.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/slick-theme.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/swiper.min.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/owl.transitions.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/jquery.fancybox.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/odometer-theme-default.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/jquery-ui.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/style.css' %}" rel="stylesheet">
+</head>
 
-</div>
+<body>
 
-<div class="row">
-    {% if districtdata %}
-    {% for data in districtdata %}
-    <div class="column">
-        <div class="container">
-             <img src="{{ data.district_Image.url }}"  alt="Shimla" width="400" height="400">
-            <div class="centered"><a href="{% url 'myhotel' data.id %}">{{ data.district_name }}</a></div>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+
+        <!-- end preloader -->
+        <!-- Start header -->
+
+        <!-- end of header -->
+        <!-- start of hero -->
+        <section class="wpo-hero-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-1.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-2.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-3.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                </div>
+                <!-- end swiper-wrapper -->
+
+                <!-- swipper controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <!-- end of wpo-hero-slide-section-->
+
+        <!-- serch-area-start -->
+
+        <!-- serch-area-end -->
+        <!-- wpo-room-area-start -->
+
+        <div class="wpo-room-area section-padding">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-6 col-md-8">
+                        <div class="wpo-section-title-s2">
+                            <h2>  Hotels </h2>
+                            <p> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-wrap">
+                    <div class="row">
+                        {% if districtdata %}
+                        {% for data in districtdata %}
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="room-item">
+                                <div class="room-img">
+                                    <img src="{{ data.district_Image.url }}" alt="" width="400" height="300>
+                                </div>
+                                <div class="room-content">
+                                    <br><br><br><h2><a href="{% url 'myhotel' data.id %}#">{{ data.district_name }}</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <br><h2 style="text-align:center;color:blue;font-size:350%" > No Destination Hotel<br> added yet </h2><br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    {% endfor %}
-    {% else %}
-    <br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Destination <br> added yet </h2><br>
-    {% endif %}
-</div>
 
 
+   <!-- All JavaScript files
+    ================================================== -->
+    <script src="{% static 'hotel/js/jquery.min.js' %}"></script>
+<!--    <script src="{% static 'hotel/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Plugins for this template &ndash;&gt;-->
+<!--    <script src="{% static 'hotel/js/modernizr.custom.js' %}"></script>-->
+    <script src="{% static 'hotel/js/jquery-plugin-collection.js' %}"></script>
+<!--    &lt;!&ndash; Custom script for this template &ndash;&gt;-->
+    <script src="{% static 'hotel/js/script.js' %}"></script>
 
 
 {% endblock %}
