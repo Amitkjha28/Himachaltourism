@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from myapp.models import District
+from myapp.models import District, Hotel
 
 
 def my_index(request):
@@ -24,3 +24,7 @@ def my_contact(request):
 
 def my_reach(request):
     return  render(request,"how_to_reach.html")
+
+def my_hotel(request):
+    hotel_data = Hotel.objects.all()
+    return  render(request,"hotel.html",{ 'hoteldata' :hotel_data})

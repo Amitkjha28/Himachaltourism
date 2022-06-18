@@ -1,0 +1,270 @@
+
+{% extends 'parent.html' %}
+{% block title %} Himachal Pradesh | Destination {% endblock %}
+{% load static %}
+{% block content %}
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpOceans">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <title>Parador - Hotel Booking HTML5 Template</title>
+<!--    <link href="{% static 'hotel/css/themify-icons.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/font-awesome.min.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'hotel/css/bootstrap.min.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/animate.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/owl.carousel.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/owl.theme.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/slick.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/slick-theme.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/swiper.min.css' %}" rel="stylesheet">
+<!--    <link href="{% static 'hotel/css/owl.transitions.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/jquery.fancybox.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/odometer-theme-default.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'hotel/css/jquery-ui.css' %}" rel="stylesheet">-->
+    <link href="{% static 'hotel/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+
+        <!-- end preloader -->
+        <!-- Start header -->
+
+        <!-- end of header -->
+        <!-- start of hero -->
+        <section class="wpo-hero-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-1.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-2.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'hotel/images/slider/slide-3.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container-fluid">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Find Your Perfect Place To Stay</h2>
+                                    </div>
+<!--                                    <div class="clearfix"></div>-->
+<!--                                    <div data-swiper-parallax="500" class="slide-btns">-->
+<!--                                        <a href="room.html" class="theme-btn">Book Now</a>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                </div>
+                <!-- end swiper-wrapper -->
+
+                <!-- swipper controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <!-- end of wpo-hero-slide-section-->
+
+        <!-- serch-area-start -->
+
+        <!-- serch-area-end -->
+        <!-- wpo-room-area-start -->
+
+        <div class="wpo-room-area section-padding">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-6 col-md-8">
+                        <div class="wpo-section-title-s2">
+                            <h2>  Hotel</h2>
+                            <p> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-wrap">
+                    <div class="row">
+                        {% if hoteldata %}
+                        {% for data in hoteldata %}
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="room-item">
+                                <div class="room-img">
+                                    <img src="{{ data.hotel_Image.url }}" alt="" width="400" height="300>
+                                </div>
+                                <div class="room-content">
+                                    <br><br><h2><a href="#">{{ data.hotel_name }}</a></h2>
+                                    <h3> Rs {{ data.price }}<span>/ Night</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <br><h2 style="text-align:center;color:blue;font-size:350%" > No Hotel added yet </h2><br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .room-area-end -->
+        <!-- start of wpo-about-section -->
+
+        <!-- end of wpo-about-section -->
+        <!-- start wpo-fun-fact-section -->
+
+        <!-- end wpo-fun-fact-section -->
+        <!-- wpo-destination-area-start -->
+
+        <!-- .Destination-area-start -->
+
+        <!-- wpo-service-area-start -->
+        <div class="wpo-service-area-s2">
+            <div class="wpo-service-wrap">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-12">
+                            <div class="wpo-service-items wpo-service-active owl-carousel">
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-food-tray"></i>
+                                        <a href="service.html">Delicious Food</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-parking"></i>
+                                        <a href="service.html">Parking Area</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-3.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-swimmer"></i>
+                                        <a href="service.html">Swimming Pool</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-4.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-mortar"></i>
+                                        <a href="service.html">Spa Salon</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-5.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-dumbell"></i>
+                                        <a href="service.html">Exercise Space</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-6.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-wifi"></i>
+                                        <a href="service.html">Free Wifi</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-7.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-cappuccino"></i>
+                                        <a href="service.html">Breakfast</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .service-area-start -->
+
+        <!-- start wpo-pricing-section -->
+
+        <!-- start wpo-pricing-section -->
+        <!-- wpo-testimonial-area start -->
+
+        <!-- wpo-testimonial-area end -->
+        <!-- start wpo-blog-section -->
+
+        <!-- end wpo-blog-section -->
+        <!-- start wpo-newslatter-section -->
+
+        <!-- end container -->
+
+        <!-- end wpo-newslatter-section -->
+        <!-- start of wpo-site-footer-section -->
+
+        <!-- end of wpo-site-footer-section -->
+
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="{% static 'hotel/js/jquery.min.js' %}"></script>
+<!--    <script src="{% static 'hotel/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Plugins for this template &ndash;&gt;-->
+<!--    <script src="{% static 'hotel/js/modernizr.custom.js' %}"></script>-->
+    <script src="{% static 'hotel/js/jquery-plugin-collection.js' %}"></script>
+<!--    &lt;!&ndash; Custom script for this template &ndash;&gt;-->
+    <script src="{% static 'hotel/js/script.js' %}"></script>
+</body>
+
+</html>
+
+{% endblock %}
