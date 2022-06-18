@@ -1,0 +1,42 @@
+
+{% extends 'parent.html' %}
+{% block title %} Himachal Pradesh | Destination {% endblock %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css\destination.css' %}">
+
+<div class="container">
+<img src="{% static 'image/feature.jpg' %}" width="1349" height="550">
+<div class="bottom-left"><U>Destination in Himachal Pradesh</u></div>
+</div>
+<div class="divi">
+<h2>All Destinations</h2>
+<p style="text-align:center;"> While traditionally Himachal was known as a summer destination, the Dept. of Tourism & Civil Aviation has taken special efforts to break
+the seasonality factor and has developed diversified tourism products to attract tourist in other seasons too.<br><br>
+Now Himachal is known as <q>A Destination for All Seasons and All Reasons.</q><br><br>In fact, the Dept. has laid a special emphasis on the development of activity-based
+tourism and opening up of new sub destinations. To promote tourism in the countryside and to unexplored areas, appropriate infrastructure is being developed within avail resources.
+</p>
+<br><br>
+
+</div>
+
+<div class="row">
+    {% if districtdata %}
+    {% for data in districtdata %}
+    <div class="column">
+        <div class="container">
+             <img src="{{ data.district_Image.url }}"  alt="Shimla" width="400" height="400">
+            <div class="centered"><a href="{% url 'myhotel' data.id %}">{{ data.district_name }}</a></div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <br><h2 style="text-align:center;background-color:powderblue;color:blue;font-size:250%" > No Destination <br> added yet </h2><br>
+    {% endif %}
+</div>
+
+
+
+
+{% endblock %}

@@ -25,6 +25,10 @@ def my_contact(request):
 def my_reach(request):
     return  render(request,"how_to_reach.html")
 
-def my_hotel(request):
-    hotel_data = Hotel.objects.all()
+def my_district_2(request):
+    district_data = District.objects.all()
+    return  render(request,"district-2.html",{ 'districtdata' :district_data})
+
+def my_hotel(request,d_id):
+    hotel_data = Hotel.objects.filter(district=d_id)
     return  render(request,"hotel.html",{ 'hoteldata' :hotel_data})
