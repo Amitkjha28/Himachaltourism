@@ -34,5 +34,9 @@ def my_hotel(request,d_id):
     return  render(request,"hotel.html",{ 'hoteldata' :hotel_data})
 
 def my_room_availability(request):
+    room_available = Hotel.objects.all()
+    return  render(request,"room_availability.html",{ 'availabilitydata' :room_available})
+
+def my_room_booking(request):
     hotel_booking = Hotel.objects.all()
-    return  render(request,"room_availability.html",{ 'availabilitydata' :hotel_booking})
+    return  render(request,"booking.html",{ 'bookingdata' :hotel_booking})

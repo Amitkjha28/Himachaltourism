@@ -47,7 +47,7 @@
                     <div class="col-lg-12">
                         <div class="wpo-select-wrap">
                             <div class="wpo-select-area">
-                                <form action="search.html" class="clearfix">
+                                <form action="{% url 'mybooking' %}" class="clearfix">
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
@@ -272,7 +272,7 @@
                         <div class="blog-sidebar room-sidebar">
                             <div class="widget check-widget">
                                 <h3>Check Availability</h3>
-                                <form>
+                                <form action="{% url 'mybooking' %}">
                                     <!-- Datepicker as text field -->
                                     <div class="input-group date">
                                         <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">
