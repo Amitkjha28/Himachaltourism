@@ -15,6 +15,7 @@ urlpatterns = [
     path('reach', views.my_reach,name='myreach'),
     path('hotel/<int:d_id>', views.my_hotel,name='myhotel'),
     path('districthotel',views.my_district_2,name='mydistrict2'),
+    path('booking', views.my_hotel_booking,name='myhotelbook')
 
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

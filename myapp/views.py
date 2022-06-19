@@ -32,3 +32,7 @@ def my_district_2(request):
 def my_hotel(request,d_id):
     hotel_data = Hotel.objects.filter(district=d_id)
     return  render(request,"hotel.html",{ 'hoteldata' :hotel_data})
+
+def my_hotel_booking(request):
+    hotel_booking = Hotel.objects.all()
+    return  render(request,"hotel_booking.html",{ 'bookingdata' :hotel_booking})
