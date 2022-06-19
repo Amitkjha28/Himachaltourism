@@ -34,8 +34,10 @@ def my_hotel(request,d_id):
     return  render(request,"hotel.html",{ 'hoteldata' :hotel_data})
 
 def my_room_availability(request):
-    room_available = Hotel.objects.all()
-    return  render(request,"room_availability.html",{ 'availabilitydata' :room_available})
+    hotelid = request.GET.get("hotelid")
+    districtid = request.GET.get("distid")
+    room_available = Hotel.objects.filter(id= hotelid,district=districtid)
+    return  render(request,"room_availability.html",{ 'availabledata' :room_available})
 
 def my_room_booking(request):
     hotel_booking = Hotel.objects.all()

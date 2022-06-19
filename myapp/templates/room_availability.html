@@ -30,10 +30,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="wpo-breadcumb-wrap">
-                            <h2>Room Booking</h2>
-                            <ul>
-                                <li><a href="{% url 'mydistrict2' %}">Hotels</a></li>
-                            </ul>
+                            {% if availabledata %}
+                            {% for data in availabledata %}
+                            <h2>
+                               {{ data.hotel_name }} <br>Room Booking
+                            </h2>
+                            {% endfor %}
+                            {% else %}
+                            <h2> Room Booking </h2>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -47,7 +52,7 @@
                     <div class="col-lg-12">
                         <div class="wpo-select-wrap">
                             <div class="wpo-select-area">
-                                <form action="{% url 'mybooking' %}" class="clearfix">
+                                <form action="{% url 'mybooking' %}" class="clearfix" method="get">
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
@@ -272,7 +277,7 @@
                         <div class="blog-sidebar room-sidebar">
                             <div class="widget check-widget">
                                 <h3>Check Availability</h3>
-                                <form action="{% url 'mybooking' %}">
+                                <form action="{% url 'mybooking' %}" method="get">
                                     <!-- Datepicker as text field -->
                                     <div class="input-group date">
                                         <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">
