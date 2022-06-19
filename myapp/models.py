@@ -21,6 +21,7 @@ class Hotel(models.Model):
     hotel_Image = models.ImageField(upload_to='hotelpics')
     price = models.IntegerField()
     discount_percent = models.IntegerField(default=0)
+    contact = RichTextField()
 
     def __str__(self):
         return self.hotel_name
