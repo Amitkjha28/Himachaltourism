@@ -1,6 +1,6 @@
 
 {% extends 'parent.html' %}
-{% block title %} Himachal Pradesh | Destination {% endblock %}
+{% block title %} Himachal Pradesh | Hotel in Destination {% endblock %}
 {% load static %}
 {% block content %}
 
@@ -113,7 +113,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-6 col-md-8">
                         <div class="wpo-section-title-s2">
-                            <h2>  Hotels </h2>
+                            <h2>  Hotel in Destination</h2>
                             <p> </p>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                                     <img src="{{ data.district_Image.url }}" alt="" width="400" height="300>
                                 </div>
                                 <div class="room-content">
-                                    <br><br><br><h2><a href="{% url 'myhotel' data.id %}#">{{ data.district_name }}</a></h2>
+                                    <br><br><br><h2><a href="{% url 'myhotel' data.id %}">{{ data.district_name }}</a></h2>
                                 </div>
                             </div>
                         </div>

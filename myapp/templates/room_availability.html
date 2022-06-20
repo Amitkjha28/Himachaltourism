@@ -1,5 +1,5 @@
 {% extends 'parent.html' %}
-{% block title %} Himachal Pradesh | Destination {% endblock %}
+{% block title %} Himachal Pradesh | Booking {% endblock %}
 {% load static %}
 {% block content %}
 
@@ -56,14 +56,14 @@
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
-                                            <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">
+                                            <input autocomplete="off" type="text" id="datepicker" placeholder="Check in" required>
                                             <i class="fi flaticon-calendar"></i>
                                         </div>
                                     </div>
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
-                                            <input autocomplete="off" type="text" id="datepicker2" placeholder="Check Out">
+                                            <input autocomplete="off" type="text" id="datepicker2" placeholder="Check Out" required>
                                             <i class="fi flaticon-calendar"></i>
                                         </div>
                                     </div>
@@ -73,11 +73,11 @@
                                                 <div class="tourist-inner">
                                                     <i class="fi flaticon-user"></i>
                                                     <ul>
-                                                        <li><input disabled type="text" id="adults" value="0">Adults
+                                                        <li><input disabled type="text" id="adults" value="1">Adults
                                                         </li>
                                                         <li><input disabled type="text" id="children" value="0">
                                                             Children</li>
-                                                        <li><input disabled type="text" id="rooms" value="0"> Room</li>
+                                                        <li><input disabled type="text" id="rooms" value="1"> Room</li>
                                                     </ul>
                                                     <i class="ti-angle-down"></i>
                                                 </div>
@@ -86,7 +86,7 @@
                                                         <span>Adults</span>
                                                         <div class="tourist-item-group">
                                                             <button type="button" id="adults_dec">-</button>
-                                                            <input disabled id="adults_val" value="0" type="text">
+                                                            <input disabled id="adults_val" value="1" type="text">
                                                             <button type="button" id="adults_inc">+</button>
                                                         </div>
                                                     </div>
@@ -102,7 +102,7 @@
                                                         <span>Rooms</span>
                                                         <div class="tourist-item-group">
                                                             <button type="button" id="rooms_dec">-</button>
-                                                            <input disabled id="rooms_val" value="0" type="text">
+                                                            <input disabled id="rooms_val" value="1" type="text">
                                                             <button type="button" id="rooms_inc">+</button>
                                                         </div>
                                                     </div>
@@ -203,25 +203,18 @@
         <div class="Room-details-area pb-120">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-12">
-                        <div class="room-description">
+                    <div class="room-description">
                             <div class="room-title">
-                                <h2>Description</h2>
+                                <h2>Contact us </h2>
                             </div>
-                            <p class="p-wrap">It's difficult to find examples of lorem ipsum in use before Letraset made
-                                it popular as a dummy text in the 1960s, although McClintock says he remembers coming
-                                across the lorem ipsum passage in a book of old metal type samples.</p>
-                            <p>So when is it okay to use lorem ipsum? First, lorem ipsum works well for staging. It's
-                                like the props in a furniture store—filler text makes it look like someone is home. The
-                                same Wordpress template might eventually be home to a fitness blog, a photography
-                                website, or the online journal of a cupcake fanatic. Lorem ipsum helps them imagine what
-                                the lived-in website might look like.</p>
-                            <p>Second, use lorem ipsum if you think the placeholder text will be too distracting. For
-                                specific projects, collaboration between copywriters and designers may be best, however,
-                                like Karen McGrane said, draft copy has a way of turning any meeting about layout
-                                decisions into a discussion about word choice. So don't be afraid to use lorem ipsum to
-                                keep everyone focused.</p>
-                        </div>
+                            {% for data in availabledata %}
+                            <h2>
+                               {{ data.contact | safe}}
+                            </h2><br><br><br>
+                            {% endfor %}
+                    </div>
+                    <div class="col-lg-8 col-12">
+
                         <div class="room-details-service">
                             <div class="row">
                                 <div class="room-details-item">
@@ -275,49 +268,127 @@
                     </div>
                     <div class="col-lg-4 col-12">
                         <div class="blog-sidebar room-sidebar">
-                            <div class="widget check-widget">
-                                <h3>Check Availability</h3>
-                                <form action="{% url 'mybooking' %}" method="get">
-                                    <!-- Datepicker as text field -->
-                                    <div class="input-group date">
-                                        <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">
-                                        <i class="fi flaticon-calendar"></i>
-                                    </div>
+<!--                            <div class="widget check-widget">-->
+<!--                                <h3>Check Availability</h3>-->
+<!--                                <form action="{% url 'mybooking' %}" method="get">-->
+<!--                                    &lt;!&ndash; Datepicker as text field &ndash;&gt;-->
+<!--                                    <div class="input-group date">-->
+<!--                                        <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">-->
+<!--                                        <i class="fi flaticon-calendar"></i>-->
+<!--                                    </div>-->
 
-                                    <!-- Datepicker as text field -->
-                                    <div class="input-group date">
-                                        <input autocomplete="off" type="text" id="datepicker2" placeholder="Check Out">
-                                        <i class="fi flaticon-calendar"></i>
-                                    </div>
+<!--                                    &lt;!&ndash; Datepicker as text field &ndash;&gt;-->
+<!--                                    <div class="input-group date">-->
+<!--                                        <input autocomplete="off" type="text" id="datepicker2" placeholder="Check Out">-->
+<!--                                        <i class="fi flaticon-calendar"></i>-->
+<!--                                    </div>-->
 
-                                    <div class="input-group date">
-                                        <select name="Adults" id="Adults">
-                                            <option value="">Adults</option>
-                                            <option value="">2</option>
-                                            <option value="">5</option>
-                                            <option value="">1</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-group date">
-                                        <select name="Children" id="Children">
-                                            <option value="">Children</option>
-                                            <option value="">2</option>
-                                            <option value="">5</option>
-                                            <option value="">1</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-group date">
-                                        <button class="theme-btn" type="submit">Check Availability</button>
-                                    </div>
-                                </form>
-                            </div>
+<!--                                    <div class="input-group date">-->
+<!--                                        <select name="Adults" id="Adults">-->
+<!--                                            <option value="">Adults</option>-->
+<!--                                            <option value="">2</option>-->
+<!--                                            <option value="">5</option>-->
+<!--                                            <option value="">1</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="input-group date">-->
+<!--                                        <select name="Children" id="Children">-->
+<!--                                            <option value="">Children</option>-->
+<!--                                            <option value="">2</option>-->
+<!--                                            <option value="">5</option>-->
+<!--                                            <option value="">1</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="input-group date">-->
+<!--                                        <button class="theme-btn" type="submit">Check Availability</button>-->
+<!--                                    </div>-->
+<!--                                </form>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--End Room-details area-->
+        <!-- wpo-service-area-start -->
+        <div class="wpo-service-area-s2">
+            <div class="wpo-service-wrap">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-12">
+                            <div class="wpo-service-items wpo-service-active owl-carousel">
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-food-tray"></i>
+                                        <a href="service.html">Delicious Food</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-parking"></i>
+                                        <a href="service.html">Parking Area</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-3.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-swimmer"></i>
+                                        <a href="service.html">Swimming Pool</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-4.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-mortar"></i>
+                                        <a href="service.html">Spa Salon</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-5.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-dumbell"></i>
+                                        <a href="service.html">Exercise Space</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-6.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-wifi"></i>
+                                        <a href="service.html">Free Wifi</a>
+                                    </div>
+                                </div>
+                                <div class="wpo-service-item">
+                                    <div class="wpo-service-img">
+                                        <img src="{% static 'hotel/images/service/img-7.jpg' %}" alt="">
+                                    </div>
+                                    <div class="wpo-service-text">
+                                        <i class="fi flaticon-cappuccino"></i>
+                                        <a href="service.html">Breakfast</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .service-area-start -->
     </div>
+
     <!-- end of page-wrapper -->
 
        <!-- All JavaScript files
