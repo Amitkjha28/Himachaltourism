@@ -52,18 +52,19 @@
                     <div class="col-lg-12">
                         <div class="wpo-select-wrap">
                             <div class="wpo-select-area">
-                                <form action="{% url 'mybooking' %}" class="clearfix" method="get">
+                                <form action="{% url 'mybooking' %}" class="clearfix" method="post">
+                                    {% csrf_token %}
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
-                                            <input autocomplete="off" type="text" id="datepicker" placeholder="Check in" required>
+                                            <input autocomplete="off" type="text" name="date1" id="datepicker" placeholder="Check in" required="required">
                                             <i class="fi flaticon-calendar"></i>
                                         </div>
                                     </div>
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
                                         <div class="input-group date">
-                                            <input autocomplete="off" type="text" id="datepicker2" placeholder="Check Out" required>
+                                            <input autocomplete="off" type="text" name="date2" id="datepicker2" placeholder="Check Out" required="required">
                                             <i class="fi flaticon-calendar"></i>
                                         </div>
                                     </div>
@@ -73,11 +74,11 @@
                                                 <div class="tourist-inner">
                                                     <i class="fi flaticon-user"></i>
                                                     <ul>
-                                                        <li><input disabled type="text" id="adults" value="1">Adults
+                                                        <li><input  type="text" name="adult" id="adults" value="1" required="required" >Adults
                                                         </li>
-                                                        <li><input disabled type="text" id="children" value="0">
+                                                        <li><input type="text" name="child" id="children" value="0">
                                                             Children</li>
-                                                        <li><input disabled type="text" id="rooms" value="1"> Room</li>
+                                                        <li><input  type="text" name="room" id="rooms" value="1" required="required"> Room</li>
                                                     </ul>
                                                     <i class="ti-angle-down"></i>
                                                 </div>

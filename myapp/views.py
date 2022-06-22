@@ -40,5 +40,5 @@ def my_room_availability(request):
     return  render(request,"room_availability.html",{ 'availabledata' :room_available})
 
 def my_room_booking(request):
-    hotel_booking = Hotel.objects.all()
-    return  render(request,"booking.html",{ 'bookingdata' :hotel_booking})
+    print(request.POST)
+    return  render(request,"booking.html")
