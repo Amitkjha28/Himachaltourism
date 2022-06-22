@@ -52,7 +52,8 @@
                     <div class="col-lg-12">
                         <div class="wpo-select-wrap">
                             <div class="wpo-select-area">
-                                <form action="{% url 'mybooking' %}" class="clearfix" method="post">
+                                {% for data in availabledata %}
+                                <form action="{% url 'mybooking' data.id  %}" class="clearfix" method="post">
                                     {% csrf_token %}
                                     <div class="select-sub">
                                         <!-- Datepicker as text field -->
@@ -115,6 +116,7 @@
                                         <button class="theme-btn" type="submit">Check Availability</button>
                                     </div>
                                 </form>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -271,7 +273,7 @@
                         <div class="blog-sidebar room-sidebar">
 <!--                            <div class="widget check-widget">-->
 <!--                                <h3>Check Availability</h3>-->
-<!--                                <form action="{% url 'mybooking' %}" method="get">-->
+<!--                                <form action="#" method="get">-->
 <!--                                    &lt;!&ndash; Datepicker as text field &ndash;&gt;-->
 <!--                                    <div class="input-group date">-->
 <!--                                        <input autocomplete="off" type="text" id="datepicker" placeholder="Check in">-->

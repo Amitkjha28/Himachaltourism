@@ -39,7 +39,8 @@ def my_room_availability(request):
     room_available = Hotel.objects.filter(id= hotelid,district=districtid)
     return  render(request,"room_availability.html",{ 'availabledata' :room_available})
 
-def my_room_booking(request):
+def my_room_booking(request,hid):
+    hotel_data = Hotel.objects.get(id=hid)
     bookingobj = Booking()
     check_in = request.POST.get("date1")
     check_out = request.POST.get("date2")
@@ -53,4 +54,4 @@ def my_room_booking(request):
     bookingobj.room = room
     bookingobj.save()
     booking_no = Booking.objects.latest('id')
-    return render(request, "booking.html", {'booking_no':booking_no})
+    return render(request, "booking.html", {'booking_no':booking_no,'hotel_data':hotel_data})

@@ -16,7 +16,7 @@ urlpatterns = [
     path('hotel/<int:d_id>', views.my_hotel,name='myhotel'),
     path('districthotel',views.my_district_2,name='mydistrict2'),
     path('availability', views.my_room_availability,name='myroom'),
-    path('bookingroom', views.my_room_booking,name='mybooking'),
+    path('bookingroom/<int:hid>', views.my_room_booking,name='mybooking'),
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
