@@ -47,6 +47,7 @@ def my_room_booking(request,hid):
     adult = request.POST.get("adult")
     child = request.POST.get("child")
     room = request.POST.get("room")
+    bookingobj.hotel_name = hotel_data
     bookingobj.check_in = check_in
     bookingobj.check_out = check_out
     bookingobj.adult = adult

@@ -27,6 +27,7 @@ class Hotel(models.Model):
         return self.hotel_name
 
 class Booking(models.Model):
+    hotel_name = models.CharField(max_length=100)
     check_in = models.DateField()
     check_out = models.DateField()
     adult = models.IntegerField()
