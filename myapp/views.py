@@ -53,4 +53,4 @@ def my_room_booking(request):
     bookingobj.room = room
     bookingobj.save()
     booking_no = Booking.objects.latest('id')
-    return render(request, "booking.html", {'check_in':check_in,'check_out':check_out,'adult':adult,'child':child,'room':room,'booking_no':booking_no})
+    return render(request, "booking.html", {'booking_no':booking_no})
