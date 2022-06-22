@@ -25,3 +25,10 @@ class Hotel(models.Model):
 
     def __str__(self):
         return self.hotel_name
+
+class Booking(models.Model):
+    check_in = models.DateField()
+    check_out = models.DateField()
+    adult = models.IntegerField()
+    child = models.IntegerField()
+    room = models.IntegerField()

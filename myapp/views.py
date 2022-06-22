@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from myapp.models import District, Hotel
+from myapp.models import District, Hotel, Booking
 
 
 def my_index(request):
@@ -40,5 +40,17 @@ def my_room_availability(request):
     return  render(request,"room_availability.html",{ 'availabledata' :room_available})
 
 def my_room_booking(request):
-    print(request.POST)
-    return  render(request,"booking.html")
+    bookingobj = Booking()
+    check_in = request.POST.get("date1")
+    check_out = request.POST.get("date2")
+    adult = request.POST.get("adult")
+    child = request.POST.get("child")
+    room = request.POST.get("room")
+    bookingobj.check_in = check_in
+    bookingobj.check_out = check_out
+    bookingobj.adult = adult
+    bookingobj.child = child
+    bookingobj.room = room
+    bookingobj.save()
+    booking_no = Booking.objects.latest('id')
+    return render(request, "booking.html", {'check_in':check_in,'check_out':check_out,'adult':adult,'child':child,'room':room,'booking_no':booking_no})

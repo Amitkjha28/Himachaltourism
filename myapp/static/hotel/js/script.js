@@ -122,11 +122,11 @@
 
 
     $(function() {
-        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
     });
         
     $(function() {
-        $( "#datepicker2" ).datepicker();
+        $( "#datepicker2" ).datepicker({ dateFormat: 'yy-mm-dd' });
     });
 
 
